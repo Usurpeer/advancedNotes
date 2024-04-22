@@ -1,0 +1,27 @@
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <ng-container *ngIf="task != null; else noData">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">{{ task.title }}</h2>
+                        <p class="card-text">Описание: {{ task.description }}</p>
+                        <p class="card-text">Дедлайн: {{ task.deadline | date: 'dd-MM-yyyy' }}</p>
+                        <p class="card-text">
+                            Статус: {{ task.completed ? "Завершена" : (isTaskOverdue() ? 'Просрочена❗' :
+                            'В процессе')
+                            }}
+                        </p>
+                        <div class="btn-group" role="group">
+                            <button class="btn btn-danger" (click)="delete()">Удалить</button>
+                            <button class="btn btn-primary" (click)="goBack()">Назад</button>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+            <ng-template #noData>
+                <p class="alert alert-warning">Нет данных</p>
+            </ng-template>
+        </div>
+    </div>
+</div>
