@@ -1,7 +1,10 @@
+import { TaskStatusDto } from './task-status';
+
 export interface TaskDto {
-  id: number;
+  id: string;
   title: string;
   description: string;
   deadline: Date;
-  completed: boolean;
+  creationDate: Date;
+  status: TaskStatusDto;
 }

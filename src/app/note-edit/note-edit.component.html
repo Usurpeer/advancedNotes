@@ -1,0 +1,22 @@
+<div class="container mt-4">
+    <form [formGroup]="noteForm" (ngSubmit)="add()" class="mt-0 mx-auto note-form"
+        style="max-width: 500px; padding: 20px; border-radius: 10px; background-color: #d2dce7;">
+        <div class="mb-3">
+            <label for="title" class="form-label">Название</label>
+            <input type="text" id="title" formControlName="title" class="form-control"  style="border-color: #000000;">
+        </div>
+
+        <div class="mb-3">
+            <label for="text" class="form-label">Содержимое</label>
+            <textarea rows="10" id="text" formControlName="text" class="form-control"
+                style="border-color: #000000;"></textarea>
+        </div>
+
+        <div class="d-flex justify-content-end">
+            <button type="button" class="btn btn-secondary me-2" routerLink="/notes"
+                style="background-color: #6c757d; border-color: #6c757d;">Отменить</button>
+            <button type="submit" class="btn btn-primary"
+                style="background-color: #007bff; border-color: #007bff;">Сохранить</button>
+        </div>
+    </form>
+</div>

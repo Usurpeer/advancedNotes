@@ -1,0 +1,16 @@
+.note-summary {
+  max-width: 700px;
+}
+
+.amount {
+  font-weight: bold;
+  color: green;
+}
+
+.card-category {
+  color: #666;
+}
+.textarea-container {
+  padding: 0;
+  overflow-y: auto;
+}

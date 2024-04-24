@@ -6,20 +6,36 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { ProjectListComponent } from './project-list-component/project-list-component.component';
-import { EditProjectComponent } from './edit-project-component/edit-project-component.component';
-import { TaskListComponent } from './task-list-component/task-list-component.component';
-import { ProjectViewComponent } from './project-view-component/project-view-component.component';
-import { TaskViewComponent } from './task-view-component/task-view-component.component';
+import { TaskListComponent } from './task-list/task-list.component';
+import { TaskViewComponent } from './task-view/task-view.component';
+import { TaskEditComponent } from './task-edit/task-edit.component';
+import { TaskStatusViewComponent } from './task-status-view/task-status-view.component';
+import { TaskStatusEditComponent } from './task-status-edit/task-status-edit.component';
+import { NoteViewComponent } from './note-view/note-view.component';
+import { NoteEditComponent } from './note-edit/note-edit.component';
+import { NoteListComponent } from './note-list/note-list.component';
+import { ExpenseViewComponent } from './expense-view/expense-view.component';
+import { ExpenseEditComponent } from './expense-edit/expense-edit.component';
+import { ExpenseListComponent } from './expense-list/expense-list.component';
+import { ExpenseCategoryViewComponent } from './expense-category-view/expense-category-view.component';
+import { ExpenseCategoryEditComponent } from './expense-category-edit/expense-category-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProjectListComponent,
-    EditProjectComponent,
     TaskListComponent,
-    ProjectViewComponent,
     TaskViewComponent,
+    TaskStatusViewComponent,
+    TaskStatusEditComponent,
+    TaskEditComponent,
+    NoteViewComponent,
+    NoteEditComponent,
+    NoteListComponent,
+    ExpenseViewComponent,
+    ExpenseEditComponent,
+    ExpenseListComponent,
+    ExpenseCategoryViewComponent,
+    ExpenseCategoryEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +43,7 @@ import { TaskViewComponent } from './task-view-component/task-view-component.com
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

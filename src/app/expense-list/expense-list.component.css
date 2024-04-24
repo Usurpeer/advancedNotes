@@ -1,0 +1,22 @@
+.expense-card {
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.amount {
+  font-weight: bold;
+  color: green;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.card-category {
+  font-style: italic;
+  color: #666;
+}

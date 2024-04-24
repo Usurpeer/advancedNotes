@@ -1,0 +1,30 @@
+<div class="container mt-4">
+    <div>
+        <div class="row">
+            <div class="col-md-12">
+                <a routerLink="/notes/new" class="btn btn-success mb-3 w-100">+</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" *ngFor="let note of notes">
+                <div class="card bg-light">
+                    <div class="mx-3 mt-2 d-flex justify-content-between align-items-center">
+                        <h5 class="card-title text-primary">{{ note.title }}</h5>
+                        <button class="btn btn-danger btn-sm" routerLink="{{note.id}}/delete"><i
+                                class="bi bi-trash"></i></button>
+                    </div>
+                    <div class="mx-3 mb-3">
+                        <textarea style="font-size: 16px;" class="card-text col-12" rows="3" readonly="true"
+                            onmousedown="return false;">{{ note.text }}</textarea>
+                        <p class="card-text text-muted">Дата создания: {{ note.creationDate | date: 'dd-MM-yyyy'}}</p>
+                        <div class="d-grid">
+                            <a routerLink="{{note.id}}" class="btn btn-primary btn-sm">Посмотреть</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
