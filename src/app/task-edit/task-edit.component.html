@@ -14,9 +14,7 @@
         <div class="mb-0">
             <label for="status" class="form-label">Статус</label>
             <select class="form-select" id="status" formControlName="status" style="border-color: #000000;">
-                <option *ngFor="let status of statuses" [ngValue]="status" [selected]="status.id === task?.status?.id">
-                    {{
-                    status.title }}</option>
+                <option *ngFor="let status of statuses" [ngValue]="status" [selected]="status.id === task?.status?.id">{{status.title }}</option>
             </select>
         </div>
         <div class="mb-2">

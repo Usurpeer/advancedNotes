@@ -12,15 +12,31 @@ export class ExpenseService {
   constructor(private http: HttpClient) {}
 
   httpProperties = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    headers: new HttpHeaders({
+      //Authorization: 'Basic ' + btoa(username + ':' + password),
+      'Content-Type': 'application/json',
+    }),
   };
 
   getAllExpenses(): Observable<ExpenseDto[]> {
-    return this.http.get<ExpenseDto[]>(`${environment.expenseUrl}`);
+    return this.http.get<ExpenseDto[]>(
+      `${environment.expenseUrl}`,
+      this.httpProperties
+    );
+  }
+
+  getSumAmount(): Observable<number> {
+    return this.http.get<number>(
+      `${environment.expenseUrl}/amount`,
+      this.httpProperties
+    );
   }
 
   getExpenseById(id: string): Observable<ExpenseDto> {
-    return this.http.get<ExpenseDto>(`${environment.expenseUrl}/${id}`);
+    return this.http.get<ExpenseDto>(
+      `${environment.expenseUrl}/${id}`,
+      this.httpProperties
+    );
   }
 
   createExpense(expense: ExpenseDto): Observable<ExpenseDto> {
@@ -40,18 +56,23 @@ export class ExpenseService {
   }
 
   deleteExpenseById(id: string): Observable<ExpenseDto> {
-    return this.http.delete<ExpenseDto>(`${environment.expenseUrl}/${id}`);
+    return this.http.delete<ExpenseDto>(
+      `${environment.expenseUrl}/${id}`,
+      this.httpProperties
+    );
   }
 
   getAllExpensesCategories(): Observable<ExpenseCategoryDto[]> {
     return this.http.get<ExpenseCategoryDto[]>(
-      `${environment.expenseUrl}/categories`
+      `${environment.expenseUrl}/categories`,
+      this.httpProperties
     );
   }
 
   getCategoryById(id: string): Observable<ExpenseCategoryDto> {
     return this.http.get<ExpenseCategoryDto>(
-      `${environment.expenseUrl}/categories/${id}`
+      `${environment.expenseUrl}/categories/${id}`,
+      this.httpProperties
     );
   }
 
@@ -76,7 +97,8 @@ export class ExpenseService {
 
   deleteCategory(id: string): Observable<ExpenseCategoryDto> {
     return this.http.delete<ExpenseCategoryDto>(
-      `${environment.expenseUrl}/categories/${id}`
+      `${environment.expenseUrl}/categories/${id}`,
+      this.httpProperties
     );
   }
 }

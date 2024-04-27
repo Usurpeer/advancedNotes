@@ -19,6 +19,9 @@ import { ExpenseEditComponent } from './expense-edit/expense-edit.component';
 import { ExpenseListComponent } from './expense-list/expense-list.component';
 import { ExpenseCategoryViewComponent } from './expense-category-view/expense-category-view.component';
 import { ExpenseCategoryEditComponent } from './expense-category-edit/expense-category-edit.component';
+import { TaskService } from './services/task-service';
+import { ExpenseService } from './services/expense-service';
+import { NoteService } from './services/note-service';
 
 @NgModule({
   declarations: [
@@ -45,7 +48,7 @@ import { ExpenseCategoryEditComponent } from './expense-category-edit/expense-ca
     ReactiveFormsModule,
     NgbModule,
   ],
-  providers: [],
+  providers: [TaskService, ExpenseService, NoteService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

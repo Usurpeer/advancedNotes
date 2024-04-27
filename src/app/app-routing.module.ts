@@ -29,10 +29,14 @@ const routes: Routes = [
 
   { path: 'expenses', component: ExpenseListComponent },
   { path: 'expenses/new', component: ExpenseEditComponent },
+  { path: 'expenses/amount', component: ExpenseListComponent },
   { path: 'expenses/categories', component: ExpenseCategoryViewComponent },
   { path: 'expenses/categories/new', component: ExpenseCategoryEditComponent },
   { path: 'expenses/categories/:id', component: ExpenseCategoryEditComponent },
-  { path: 'expenses/categories/:id/delete', component: ExpenseCategoryEditComponent },
+  {
+    path: 'expenses/categories/:id/delete',
+    component: ExpenseCategoryEditComponent,
+  },
   { path: 'expenses/:id', component: ExpenseViewComponent },
   { path: 'expenses/:id/edit', component: ExpenseEditComponent },
   { path: 'expenses/:id/delete', component: ExpenseEditComponent },

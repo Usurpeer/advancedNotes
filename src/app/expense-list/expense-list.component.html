@@ -34,7 +34,12 @@
             </div>
         </div>
 
-
+        <div class="row">
+            <div class="col-md-12 text-right">
+                <p class="text-end">Итоговая сумма покупок: <span class="card-text amount">{{ amount | currency:'RUB '
+                        }}</span></p>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-12">
                 <a routerLink="/expenses/categories" class="btn btn-primary mb-3 w-100">Редактор категорий</a>

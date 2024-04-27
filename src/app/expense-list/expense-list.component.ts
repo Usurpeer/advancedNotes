@@ -12,9 +12,12 @@ import { ExpenseService } from '../services/expense-service';
 })
 export class ExpenseListComponent implements OnInit {
   expenses: ExpenseDto[] = [];
+  amount: number;
+
   constructor(private expenseService: ExpenseService, private router: Router) {}
 
   ngOnInit(): void {
+    this.getAmount();
     this.getExpenses();
   }
 
@@ -26,5 +29,11 @@ export class ExpenseListComponent implements OnInit {
 
   createNote(): void {
     this.router.navigate(['/expenses/new']);
+  }
+
+  getAmount(): void {
+    this.expenseService.getSumAmount().subscribe((amount) => {
+      this.amount = amount;
+    });
   }
 }
